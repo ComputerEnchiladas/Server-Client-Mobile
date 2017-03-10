@@ -34,9 +34,9 @@ require('mahrio').runServer( process.env, __dirname ).then( function(server){
     });
   });
 
-  setInterval( function(){
-    io.sockets.emit('event:led:state', state = !state );
-  }, 1000);
+//  setInterval( function(){
+//    io.sockets.emit('event:led:state', state = !state );
+//  }, 1000);
 
   // ASSETS
   server.route({

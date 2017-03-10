@@ -1,7 +1,7 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {
-  socket.on('event:motion', function( val ) {
+  socket.on('event:led:state', function( val ) {
     console.log('Motion in 21 is ' +(val ? 'ACTIVE' : 'INACTIVE'));
     $scope.$apply( function() {
       $scope.motion = val ? true : false;
