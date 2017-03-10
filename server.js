@@ -20,7 +20,7 @@ board.on("ready", function() {
   });
 });
 
-require('mahrio')( process.env, __dirname ).then( function(server){
+require('mahrio').runServer( process.env, __dirname ).then( function(server){
 
   io = require('socket.io').listen( server.listener );
 
