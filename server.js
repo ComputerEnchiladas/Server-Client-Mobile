@@ -6,19 +6,7 @@ if (process.env.NODE_ENV === 'development') {
   console.log('Running Development!');
 }
 
-var io, five = require("johnny-five");
-var board = new five.Board();
-var state = false;
-
-board.on("ready", function() {
-  var led = new five.Led(13);
-  led.off();
-  led.blink(5000, function(){
-    console.log( state );
-    state = !state;
-    io.sockets.emit('event:led:state', state);
-  });
-});
+var state = false, io;
 
 require('mahrio').runServer( process.env, __dirname ).then( function(server){
 
@@ -34,9 +22,9 @@ require('mahrio').runServer( process.env, __dirname ).then( function(server){
     });
   });
 
-//  setInterval( function(){
-//    io.sockets.emit('event:led:state', state = !state );
-//  }, 1000);
+  setInterval( function(){
+    io.sockets.emit('event:led:state', state = !state );
+  }, 1000);
 
   // ASSETS
   server.route({

@@ -1,5 +1,5 @@
 {
-  "name": "arduino-johnny-socket--server-mobile-web",
+  "name": "client-server-mobile",
   "version": "0.0.1",
   "description": "",
   "repository": "",
@@ -8,7 +8,6 @@
     "start": "node server/index.js"
   },
   "dependencies": {
-    "johnny-five": "^0.10.6",
     "mahrio": "https://github.com/JRGEMCP/mahrio.git",
     "node-env-file": "0.1.8",
     "socket.io": "^1.7.3"
